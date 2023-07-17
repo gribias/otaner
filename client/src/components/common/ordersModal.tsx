@@ -201,7 +201,7 @@ export const OrdersModal: React.FC<OrdersModalProps & { setShowModal: React.Disp
 
   const checkout = (cartItems: any) => {
     return async () => {
-      const response = await fetch("http://localhost:8080/api/v1/orders", {
+      const response = await fetch("https://otaner.onrender.com/api/v1/orders", {
         method: "POST",
         body: JSON.stringify({
           cartItems,

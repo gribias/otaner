@@ -89,7 +89,7 @@ function App() {
       const profileObj = credential ? parseJwt(credential) : null;
 // save user to mongodb...
       if(profileObj){
-        const response = await fetch('http://localhost:8080/api/v1/users', {
+        const response = await fetch('https://otaner.onrender.com/api/v1/users', {
           method: 'Post',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
@@ -184,7 +184,7 @@ function App() {
           <GlobalStyles styles={{ html: { WebkitFontSmoothing: "auto" } }} />
           <RefineSnackbarProvider>
             <Refine
-              dataProvider={dataProvider("http://localhost:8080/api/v1")}
+              dataProvider={dataProvider("https://otaner.onrender.com/api/v1")}
               notificationProvider={notificationProvider}
               routerProvider={routerBindings}
               authProvider={authProvider}
