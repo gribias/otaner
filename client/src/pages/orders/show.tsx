@@ -67,7 +67,7 @@
     const columns: GridColDef[] = [
       {
         field: "Photo",
-        headerName: "Photo",
+        headerName: "Imagem",
         width: 150,
         renderCell: (params: GridCellParams) => (
           <Stack direction="row" spacing={4} alignItems="center">
@@ -81,7 +81,7 @@
       },
       {
         field: "product",
-        headerName: "Reference",
+        headerName: "Referência",
         width: 150,
         renderCell: (params: GridCellParams) => (
           <Typography variant="body1" whiteSpace="break-spaces">
@@ -108,7 +108,7 @@
       // },
       {
         field: "quantity",
-        headerName: "Quantity",
+        headerName: "Quantidade",
         type: "number",
         width: 100,
         renderCell: (params: GridCellParams) => (
@@ -117,7 +117,7 @@
       },
       {
         field: "size",
-        headerName: "Size",
+        headerName: "Tamanho",
         width: 100,
         renderCell: (params: GridCellParams) => (
           <Typography variant="body1">{params.row.size}</Typography>
@@ -163,14 +163,13 @@
   // Modal component
   const ImageModal = () => (
     <Dialog open={isModalOpen} onClose={() => setIsModalOpen(false)}>
-      <DialogTitle>Larger Image</DialogTitle>
       <DialogContent>
         <Box width={400} height={400}>
           <img src={selectedImage} alt="Larger" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
         </Box>
       </DialogContent>
       <DialogActions>
-        <Button onClick={() => setIsModalOpen(false)}>Close</Button>
+        <Button onClick={() => setIsModalOpen(false)}>Fechar</Button>
       </DialogActions>
     </Dialog>
   );

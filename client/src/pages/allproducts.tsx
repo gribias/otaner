@@ -67,13 +67,13 @@ const allProducts = useMemo(() => {
       <Box mt="20px" sx={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
         <Stack direction="column" width="100%">
           <Typography fontSize={25} fontWeight={700} color="#11142d">
-            {!allProducts.length ?'There are no Products': 'All Products'} 
+            {!allProducts.length ?'Sem produtos disponíveis': 'Produtos para venda'} 
           </Typography>
           <Box mb={2} mt={3} display="flex"
           width="84%" justifyContent="space-between" flexWrap="wrap"
           >
             <Box display="flex" gap={2} flexWrap="wrap" mb={{ xs:'20px', sm: 0}}>
-            <CustomButton title={`Sort Cost ${currentCost === 'asc' ? '↑':'↓'}`}
+            <CustomButton title={`Ordenar por preço ${currentCost === 'asc' ? '↑':'↓'}`}
             handleClick={() => toggleSort('cost')}
             backgroundColor="#475be8"
             color="#fcfcfc"
@@ -81,7 +81,7 @@ const allProducts = useMemo(() => {
             <TextField 
             variant='outlined'
             color= "info"
-            placeholder="Search by reference"
+            placeholder="Pesquisar por referência"
             value={currentFilterValues.reference}
             onChange={(e) => {
               setFilters([
@@ -126,7 +126,7 @@ const allProducts = useMemo(() => {
       <Stack direction="row" justifyContent="space-between" alignItems="center">
       {userEmail === 'gabrielcorreia94@gmail.com' && (
           <CustomButton
-            title="Add product"
+            title="Adicionar produto"
             handleClick={() =>
               go({
                 to: "/products/create",
@@ -156,7 +156,7 @@ const allProducts = useMemo(() => {
       {allProducts.length > 0 && (
         <Box display="flex" gap={2} mt={3} flexWrap="wrap">
           <CustomButton
-          title='Previous'
+          title='Anterior'
           handleClick={() => setCurrent((prev) => prev - 1)}
           backgroundColor="#475be8"
           color="#fcfcfc"
@@ -166,10 +166,10 @@ const allProducts = useMemo(() => {
 
           <Box display={{ xs: 'hidden', sm:'flex'}}
           alignItems = "center" gap="5px">
-            Page{' '}<strong> {current} of {pageCount}</strong>
+            Página{' '}<strong> {current} de {pageCount}</strong>
           </Box>
           <CustomButton
-          title='Next'
+          title='Próximo'
           handleClick={() => setCurrent((prev) => prev + 1)}
           backgroundColor="#475be8"
           color="#fcfcfc"
@@ -182,11 +182,11 @@ const allProducts = useMemo(() => {
             displayEmpty
             required
             inputProps={{ 'aria-label': 'Without label'}}
-            defaultValue={10}
-            onChange={(e) => setPageSize(e.target.value ? Number(e.target.value) : 10 )}
+            defaultValue={40}
+            onChange={(e) => setPageSize(e.target.value ? Number(e.target.value) : 40 )}
             >
-              {[10, 20, 30, 40, 50].map((size) =>(
-                 <MenuItem  key={size} value={size}>Show {size}</MenuItem>
+              {[40, 80, 100, 140, 180].map((size) =>(
+                 <MenuItem  key={size} value={size}>Mostrar {size}</MenuItem>
               ))}
              
             </Select>
