@@ -113,7 +113,7 @@ const Form = ({
                 color: '#11142d'
               }}
             >
-              Enter product reference
+              Nome da referencia
             </FormHelperText>
             <TextField
               fullWidth
@@ -135,11 +135,11 @@ const Form = ({
                 color: '#11142d'
               }}
             >
-              Description
+              Descrição
             </FormHelperText>
             <TextareaAutosize
               minRows={5}
-              placeholder="Write description"
+              placeholder="Escreva aqui a descrição do produto (interno)"
               color="info"
               style={{
                 width: '100%',
@@ -167,7 +167,7 @@ const Form = ({
       color: '#11142d'
     }}
   >
-    Select Material type
+    Tipo de material
   </FormHelperText>
   {material.map((material) => (
     <Stack key={material.type} direction="row" alignItems="center" gap={2}>
@@ -200,7 +200,7 @@ const Form = ({
 </FormControl>
     {/* Rest of your JSX code */}
   </Box>
-            <FormControl>
+            {/* <FormControl>
               <FormHelperText
                 sx={{
                   fontWeight: 500,
@@ -223,7 +223,7 @@ const Form = ({
                   required: true
                 })}
               />
-            </FormControl>
+            </FormControl> */}
             {/* Add the dropdown for user IDs */}
             <FormControl>
               <FormHelperText
@@ -234,7 +234,7 @@ const Form = ({
                   color: '#11142d'
                 }}
               >
-                Select User Email
+               Selecionar email do cliente
               </FormHelperText>
               <Controller
                 name="userProduct"
@@ -270,7 +270,7 @@ const Form = ({
                 color: '#11142d'
               }}
             >
-              Enter cost price
+              Preço
             </FormHelperText>
             <TextField
               fullWidth
@@ -287,7 +287,7 @@ const Form = ({
           <Stack direction="column" gap={1} justifyContent="center" mb={2}>
             <Stack direction="row" gap={2}>
               <Typography color="#11142d" fontSize={16} fontWeight={500} my="10px">
-                Product Photo
+                Imagem do produto
               </Typography>
               <Button
                 component="label"

@@ -278,7 +278,7 @@ export const OrdersModal: React.FC<OrdersModalProps & { setShowModal: React.Disp
   ))}
                   {/* Note input field */}
                   <TextField
-                    label="Order Note"
+                    label="Escreva uma nota"
                     variant="outlined"
                     value={note}
                     onChange={handleNoteChange}
