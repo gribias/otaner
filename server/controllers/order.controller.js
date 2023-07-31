@@ -141,7 +141,7 @@ const getOrderDetail = async (req, res) => {
       order.products.map(async (product) => {
         const populatedProduct = await Product.populate(product, {
           path: '_id',
-          select: 'reference material quantity cost photo',
+          select: 'reference material quantity cost photo description',
         });
         return populatedProduct;
       })
