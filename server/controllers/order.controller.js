@@ -334,7 +334,7 @@ cartItems.forEach(cartItem => {
       orderNumber: orderNumber,
       user: user._id,
       orderDate: new Date(),
-      products: products, // Use the original cartItems array in the order
+      products: cartItems, // Use the original cartItems array in the order
       creator: user._id,
       Total: Total,
       NumberArticles: NumberArticles,
