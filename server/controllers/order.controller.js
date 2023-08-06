@@ -232,7 +232,7 @@ console.log(order, 'order')
 
 const getOrders = async (req, res) => {
   try {
-    const { _start = 0, _end = 10, _sort = 'id', _order = 'asc', creator, orderNumber, orderNumber_like,status_ne } = req.query;
+    const { _start = 0, _end = 10, _sort = 'id', _order = 'asc', creator, orderNumber, orderNumber_like, status, status_ne } = req.query;
     const sort = _order === 'asc' ? _sort : `-${_sort}`;
 
     const query = {};
@@ -245,9 +245,15 @@ const getOrders = async (req, res) => {
       query.orderNumber = { $regex: orderNumber_like, $options: 'i' };
     }
 
-    if (status_ne) { // <-- Add this block
+    if (status) { 
+      query.status = status;
+    }
+
+    if (status_ne) {
       query.state = { $ne: status_ne };
     }
+
+  
 
 
     if (creator) {
