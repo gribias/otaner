@@ -232,7 +232,7 @@ console.log(order, 'order')
 
 const getOrders = async (req, res) => {
   try {
-    const { _start = 0, _end = 10, _sort = 'id', _order = 'asc', creator, orderNumber, orderNumber_like, status, status_ne } = req.query;
+    const { _start = 0, _end = 10, _sort = 'id', _order = 'asc', creator, orderNumber, orderNumber_like, status, status_ne, products_like  } = req.query;
     const sort = _order === 'asc' ? _sort : `-${_sort}`;
 
     const query = {};
@@ -251,6 +251,9 @@ const getOrders = async (req, res) => {
       query['status.text'] = { $ne: status_ne }; // <-- Reference status.text
     }
     
+    if (products_like) {
+      query['products.reference'] = { $regex: products_like, $options: 'i' }; // <-- Adjust according to your schema
+    }
 
     // if (status_ne) {
       
