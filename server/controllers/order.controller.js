@@ -247,10 +247,10 @@ const getOrders = async (req, res) => {
 
     if (status) { 
       query['status.text'] = status;
-    }else{
+    } else if (status_ne) {
       query['status.text'] = { $ne: status_ne }; // <-- Reference status.text
     }
-
+    
 
     // if (status_ne) {
       
